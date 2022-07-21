@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using MobfishCardboard;
 
@@ -12,7 +10,7 @@ namespace MobfishCardboardDemo
         public string targetUrl;
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             if (switchButton != null)
                 switchButton.onClick.AddListener(SwitchProfile);

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using MobfishCardboard;
 
 namespace MobfishCardboardDemo.SceneTest
@@ -13,9 +10,9 @@ namespace MobfishCardboardDemo.SceneTest
 
         private void Awake()
         {
-            CardboardMesh cMeshData = JsonUtility.FromJson<CardboardMesh>(meshDataRaw.text);
+            var cMeshData = JsonUtility.FromJson<CardboardMesh>(meshDataRaw.text);
             // CardboardMesh cMeshData = GetEditorTestMesh();
-            Mesh unityMesh = CardboardUtility.ConvertCardboardMesh_Triangle(cMeshData);
+            var unityMesh = CardboardUtility.ConvertCardboardMesh_Triangle(cMeshData);
             meshFilter.mesh = unityMesh;
         }
 
@@ -32,13 +29,13 @@ namespace MobfishCardboardDemo.SceneTest
         }
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
 
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
 
         }

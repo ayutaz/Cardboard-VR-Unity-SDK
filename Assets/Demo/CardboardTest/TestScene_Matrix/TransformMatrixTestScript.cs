@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using MobfishCardboard;
+﻿using MobfishCardboard;
 using UnityEngine;
 
 namespace MobfishCardboardDemo.SceneTest
@@ -11,7 +9,7 @@ namespace MobfishCardboardDemo.SceneTest
 
         // Matrix, col 0 to col 3:
         // right, up, forward, all of them are normalized
-        void Start()
+        private void Start()
         {
             Debug.LogFormat("Origin Pos={0}, Quat={1}, \r\neuler={2}, \r\nup={3}, forward={4}",
                 testTransform.localPosition.ToString("F4"),
@@ -20,11 +18,11 @@ namespace MobfishCardboardDemo.SceneTest
                 testTransform.up.ToString("F4"),
                 testTransform.forward.ToString("F4"));
 
-            Matrix4x4 testMat = CardboardUtility.GetTransformTRSMatrix(testTransform);
+            var testMat = CardboardUtility.GetTransformTRSMatrix(testTransform);
 
             Debug.LogFormat("matrix=\r\n{0}", testMat);
 
-            Pose newPose = CardboardUtility.GetPoseFromTRSMatrix(testMat);
+            var newPose = CardboardUtility.GetPoseFromTRSMatrix(testMat);
 
             Debug.LogFormat("newPose Pos={0}, Quat={1}, euler={2}",
                 newPose.position.ToString("F4"),
@@ -32,10 +30,5 @@ namespace MobfishCardboardDemo.SceneTest
                 newPose.rotation.eulerAngles.ToString("F4"));
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }

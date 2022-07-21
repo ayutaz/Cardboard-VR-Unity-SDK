@@ -21,8 +21,8 @@ namespace MobfishCardboardDemo
 
         public static void SaveFile(string fileNameRoot, string fileContent, string fileExtension = "json")
         {
-            int increment = 0;
-            string targetFilePath = GetSavePath(string.Concat(fileNameRoot, ".", fileExtension));
+            var increment = 0;
+            var targetFilePath = GetSavePath(string.Concat(fileNameRoot, ".", fileExtension));
             while (File.Exists(targetFilePath))
             {
                 targetFilePath =
@@ -35,13 +35,13 @@ namespace MobfishCardboardDemo
 
         public static void Save_MeshJson(CardboardMesh sourceMeshData)
         {
-            CardboardMeshJsonClass target = new CardboardMeshJsonClass(sourceMeshData);
+            var target = new CardboardMeshJsonClass(sourceMeshData);
             SaveFile(FILE_EYEMESH, JsonUtility.ToJson(target, true));
         }
 
         public static void Save_EncodedParam(byte[] encodedParams, int pointerLength)
         {
-            CardboardProfileParamsJsonClass target = new CardboardProfileParamsJsonClass(encodedParams, pointerLength);
+            var target = new CardboardProfileParamsJsonClass(encodedParams, pointerLength);
             SaveFile(FILE_ENCODED_PROFILE_PARAMS, JsonUtility.ToJson(target, true));
         }
     }

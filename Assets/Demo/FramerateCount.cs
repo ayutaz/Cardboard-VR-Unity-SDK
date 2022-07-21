@@ -1,15 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class FramerateCount: MonoBehaviour
 {
     public static string fpsString { get; private set; }
 
-    void Update()
+    private void Update()
     {
-        float fps = 1.0f / Time.deltaTime;
+        var fps = 1.0f / Time.deltaTime;
         fpsString = Mathf.Ceil(fps).ToString();
     }
 }

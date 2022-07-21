@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using MobfishCardboard;
 
@@ -21,7 +18,7 @@ namespace MobfishCardboardDemo
         }
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
         }
 
@@ -38,14 +35,14 @@ namespace MobfishCardboardDemo
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             debugText.text = string.Format("device rot={0}, \r\nUnity rot={1},\r\nUnity FPS={2}",
                 CardboardHeadTracker.trackerRawRotation.eulerAngles,
                 CardboardHeadTracker.trackerUnityRotation.eulerAngles,
                 FramerateCount.fpsString);
 
-            Pose headPose = CardboardManager.GetHeadPose();
+            var headPose = CardboardManager.GetHeadPose();
             testHeadFollower.localRotation = headPose.rotation;
             testHeadFollower.localPosition = headPose.position;
         }

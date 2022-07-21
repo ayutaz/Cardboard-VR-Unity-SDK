@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +10,7 @@ namespace MobfishCardboardDemo
         public int targetSceneId;
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             if (switchButton != null)
                 switchButton.onClick.AddListener(SwitchScene);

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using MobfishCardboard;
 
@@ -11,7 +9,7 @@ namespace MobfishCardboardDemo
         public Button recenterButton;
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             if (recenterButton != null)
                 recenterButton.onClick.AddListener(RecenterCamera);
@@ -19,7 +17,7 @@ namespace MobfishCardboardDemo
         }
 
         // Update is called once per frame
-        void RecenterCamera()
+        private void RecenterCamera()
         {
             CardboardManager.RecenterCamera();
         }
